@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="modelStoreContainer">
+    <EntitySet Name="Aluno" EntityType="model.Store.Aluno" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Auxiliar" EntityType="model.Store.Auxiliar" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Funcionario" EntityType="model.Store.Funcionario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Instrucao" EntityType="model.Store.Instrucao" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Professor" EntityType="model.Store.Professor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sexo" EntityType="model.Store.Sexo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Turma" EntityType="model.Store.Turma" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Aluno_Instrucao" Association="model.Store.FK_Aluno_Instrucao">
+      <End Role="Instrucao" EntitySet="Instrucao" />
+      <End Role="Aluno" EntitySet="Aluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aluno_InstrucaoMae" Association="model.Store.FK_Aluno_InstrucaoMae">
+      <End Role="Instrucao" EntitySet="Instrucao" />
+      <End Role="Aluno" EntitySet="Aluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aluno_Sexo" Association="model.Store.FK_Aluno_Sexo">
+      <End Role="Sexo" EntitySet="Sexo" />
+      <End Role="Aluno" EntitySet="Aluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aluno_Turma" Association="model.Store.FK_Aluno_Turma">
+      <End Role="Turma" EntitySet="Turma" />
+      <End Role="Aluno" EntitySet="Aluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Auxiliar_Funcionario" Association="model.Store.FK_Auxiliar_Funcionario">
+      <End Role="Funcionario" EntitySet="Funcionario" />
+      <End Role="Auxiliar" EntitySet="Auxiliar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Auxiliar_Turma" Association="model.Store.FK_Auxiliar_Turma">
+      <End Role="Turma" EntitySet="Turma" />
+      <End Role="Auxiliar" EntitySet="Auxiliar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Funcionario_Instrucao" Association="model.Store.FK_Funcionario_Instrucao">
+      <End Role="Instrucao" EntitySet="Instrucao" />
+      <End Role="Funcionario" EntitySet="Funcionario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Funcionario_Sexo" Association="model.Store.FK_Funcionario_Sexo">
+      <End Role="Sexo" EntitySet="Sexo" />
+      <End Role="Funcionario" EntitySet="Funcionario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Professor_Funcionario" Association="model.Store.FK_Professor_Funcionario">
+      <End Role="Funcionario" EntitySet="Funcionario" />
+      <End Role="Professor" EntitySet="Professor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Turma_Professor" Association="model.Store.FK_Turma_Professor">
+      <End Role="Professor" EntitySet="Professor" />
+      <End Role="Turma" EntitySet="Turma" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Aluno">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="mid" Type="int" Nullable="false" />
+    <Property Name="nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ano_letivo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CFC" Type="nvarchar" MaxLength="50" />
+    <Property Name="BF" Type="nvarchar" MaxLength="50" />
+    <Property Name="designacao" Type="nvarchar" MaxLength="50" />
+    <Property Name="NIS" Type="nvarchar" MaxLength="50" />
+    <Property Name="sexo" Type="nchar" MaxLength="1" />
+    <Property Name="data_de_nascimento" Type="date" />
+    <Property Name="nacionalidade" Type="nvarchar" MaxLength="50" />
+    <Property Name="uf" Type="nchar" MaxLength="2" />
+    <Property Name="religiao" Type="nvarchar" MaxLength="50" />
+    <Property Name="frequentou_EI" Type="bit" />
+    <Property Name="pai" Type="nvarchar" MaxLength="50" />
+    <Property Name="pai_RG" Type="nchar" MaxLength="9" />
+    <Property Name="pai_falecido" Type="bit" />
+    <Property Name="pai_instrucao" Type="int" />
+    <Property Name="pai_mora_com_aluno" Type="bit" />
+    <Property Name="pai_profissao" Type="nvarchar" MaxLength="50" />
+    <Property Name="mae" Type="nvarchar" MaxLength="50" />
+    <Property Name="mae_NIS" Type="nvarchar" MaxLength="50" />
+    <Property Name="mae_RG" Type="nchar" MaxLength="9" />
+    <Property Name="mae_falecida" Type="bit" />
+    <Property Name="mae_instrucao" Type="int" />
+    <Property Name="mae_mora_com_aluno" Type="bit" />
+    <Property Name="mae_profissao" Type="nvarchar" MaxLength="50" />
+    <Property Name="responsavel" Type="nvarchar" MaxLength="50" />
+    <Property Name="responsavel_tipo" Type="nvarchar" MaxLength="50" />
+    <Property Name="responsavel_endereco" Type="nvarchar" MaxLength="100" />
+    <Property Name="responsavel_CEP" Type="nchar" MaxLength="8" />
+    <Property Name="responsavel_telefone" Type="nchar" MaxLength="11" />
+    <Property Name="contato_1" Type="nvarchar" MaxLength="50" />
+    <Property Name="telefone_contato_1" Type="nchar" MaxLength="11" />
+    <Property Name="contato_2" Type="nvarchar" MaxLength="50" />
+    <Property Name="telefone_contato_2" Type="nchar" MaxLength="11" />
+    <Property Name="problemas_de_saude" Type="nvarchar" MaxLength="50" />
+    <Property Name="educacao_especial" Type="nvarchar" MaxLength="50" />
+    <Property Name="atendimento_especial" Type="nvarchar" MaxLength="50" />
+    <Property Name="frequentou_outra_instituicao" Type="nvarchar" MaxLength="50" />
+    <Property Name="meio_de_transporte" Type="nvarchar" MaxLength="50" />
+    <Property Name="tempo_de_deslocamento" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_de_preenchimento" Type="date" />
+    <Property Name="responsavel_pelo_preenchimento" Type="nvarchar" MaxLength="50" />
+    <Property Name="turma_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Auxiliar">
+    <Key>
+      <PropertyRef Name="id_funcionario" />
+    </Key>
+    <Property Name="id_funcionario" Type="int" Nullable="false" />
+    <Property Name="id_turma" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Funcionario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="sexo" Type="nchar" MaxLength="1" />
+    <Property Name="data_ingresso" Type="date" />
+    <Property Name="data_nascimento" Type="date" />
+    <Property Name="RG" Type="nchar" MaxLength="9" />
+    <Property Name="CPF" Type="nchar" MaxLength="11" />
+    <Property Name="titulo" Type="nchar" MaxLength="12" />
+    <Property Name="carteira_de_trabalho" Type="nvarchar" MaxLength="50" />
+    <Property Name="endereco" Type="nvarchar" MaxLength="100" />
+    <Property Name="telefone" Type="nvarchar" MaxLength="11" />
+    <Property Name="instrucao" Type="int" />
+  </EntityType>
+  <EntityType Name="Instrucao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Professor">
+    <Key>
+      <PropertyRef Name="id_funcionario" />
+    </Key>
+    <Property Name="id_funcionario" Type="int" Nullable="false" />
+    <Property Name="id_turma" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sexo">
+    <Key>
+      <PropertyRef Name="abreviacao" />
+    </Key>
+    <Property Name="nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="abreviacao" Type="nchar" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Turma">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="professor_id" Type="int" Nullable="false" />
+    <Property Name="grupamento" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Aluno_Instrucao">
+    <End Role="Instrucao" Type="model.Store.Instrucao" Multiplicity="0..1" />
+    <End Role="Aluno" Type="model.Store.Aluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instrucao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Aluno">
+        <PropertyRef Name="pai_instrucao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aluno_InstrucaoMae">
+    <End Role="Instrucao" Type="model.Store.Instrucao" Multiplicity="0..1" />
+    <End Role="Aluno" Type="model.Store.Aluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instrucao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Aluno">
+        <PropertyRef Name="mae_instrucao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aluno_Sexo">
+    <End Role="Sexo" Type="model.Store.Sexo" Multiplicity="0..1" />
+    <End Role="Aluno" Type="model.Store.Aluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sexo">
+        <PropertyRef Name="abreviacao" />
+      </Principal>
+      <Dependent Role="Aluno">
+        <PropertyRef Name="sexo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aluno_Turma">
+    <End Role="Turma" Type="model.Store.Turma" Multiplicity="0..1" />
+    <End Role="Aluno" Type="model.Store.Aluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Turma">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Aluno">
+        <PropertyRef Name="turma_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Auxiliar_Funcionario">
+    <End Role="Funcionario" Type="model.Store.Funcionario" Multiplicity="1" />
+    <End Role="Auxiliar" Type="model.Store.Auxiliar" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Auxiliar">
+        <PropertyRef Name="id_funcionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Auxiliar_Turma">
+    <End Role="Turma" Type="model.Store.Turma" Multiplicity="1" />
+    <End Role="Auxiliar" Type="model.Store.Auxiliar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Turma">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Auxiliar">
+        <PropertyRef Name="id_turma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Funcionario_Instrucao">
+    <End Role="Instrucao" Type="model.Store.Instrucao" Multiplicity="0..1" />
+    <End Role="Funcionario" Type="model.Store.Funcionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instrucao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Funcionario">
+        <PropertyRef Name="instrucao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Funcionario_Sexo">
+    <End Role="Sexo" Type="model.Store.Sexo" Multiplicity="0..1" />
+    <End Role="Funcionario" Type="model.Store.Funcionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sexo">
+        <PropertyRef Name="abreviacao" />
+      </Principal>
+      <Dependent Role="Funcionario">
+        <PropertyRef Name="sexo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Professor_Funcionario">
+    <End Role="Funcionario" Type="model.Store.Funcionario" Multiplicity="1" />
+    <End Role="Professor" Type="model.Store.Professor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Professor">
+        <PropertyRef Name="id_funcionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Turma_Professor">
+    <End Role="Professor" Type="model.Store.Professor" Multiplicity="1" />
+    <End Role="Turma" Type="model.Store.Turma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professor">
+        <PropertyRef Name="id_funcionario" />
+      </Principal>
+      <Dependent Role="Turma">
+        <PropertyRef Name="professor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

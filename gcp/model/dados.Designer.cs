@@ -19,19 +19,19 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("model", "FK_Aluno_Instrucao", "Instrucao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.Instrucao), "Aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.Aluno), true)]
-[assembly: EdmRelationshipAttribute("model", "FK_Aluno_InstrucaoMae", "Instrucao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.Instrucao), "Aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.Aluno), true)]
-[assembly: EdmRelationshipAttribute("model", "FK_Aluno_Sexo", "Sexo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.Sexo), "Aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.Aluno), true)]
-[assembly: EdmRelationshipAttribute("model", "FK_Aluno_Turma", "Turma", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.Turma), "Aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.Aluno), true)]
-[assembly: EdmRelationshipAttribute("model", "FK_Funcionario_Instrucao", "Instrucao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.Instrucao), "Funcionario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.Funcionario), true)]
-[assembly: EdmRelationshipAttribute("model", "FK_Funcionario_Sexo", "Sexo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.Sexo), "Funcionario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.Funcionario), true)]
-[assembly: EdmRelationshipAttribute("model", "FK_Professor_Funcionario", "Funcionario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(gcp.Funcionario), "Professor", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.Professor), true)]
-[assembly: EdmRelationshipAttribute("model", "FK_Turma_Professor", "Professor", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(gcp.Professor), "Turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.Turma), true)]
-[assembly: EdmRelationshipAttribute("model", "Auxiliar", "Funcionario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.Funcionario), "Turma", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.Turma))]
+[assembly: EdmRelationshipAttribute("model", "FK_Aluno_Instrucao", "Instrucao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.model.Instrucao), "Aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.model.Aluno), true)]
+[assembly: EdmRelationshipAttribute("model", "FK_Aluno_InstrucaoMae", "Instrucao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.model.Instrucao), "Aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.model.Aluno), true)]
+[assembly: EdmRelationshipAttribute("model", "FK_Aluno_Sexo", "Sexo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.model.Sexo), "Aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.model.Aluno), true)]
+[assembly: EdmRelationshipAttribute("model", "FK_Aluno_Turma", "Turma", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.model.Turma), "Aluno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.model.Aluno), true)]
+[assembly: EdmRelationshipAttribute("model", "FK_Funcionario_Instrucao", "Instrucao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.model.Instrucao), "Funcionario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.model.Funcionario), true)]
+[assembly: EdmRelationshipAttribute("model", "FK_Funcionario_Sexo", "Sexo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.model.Sexo), "Funcionario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.model.Funcionario), true)]
+[assembly: EdmRelationshipAttribute("model", "FK_Professor_Funcionario", "Funcionario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(gcp.model.Funcionario), "Professor", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.model.Professor), true)]
+[assembly: EdmRelationshipAttribute("model", "FK_Turma_Professor", "Professor", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(gcp.model.Professor), "Turma", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.model.Turma), true)]
+[assembly: EdmRelationshipAttribute("model", "Auxiliar", "Funcionario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(gcp.model.Funcionario), "Turma", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(gcp.model.Turma))]
 
 #endregion
 
-namespace gcp
+namespace gcp.model
 {
     #region Contexts
     

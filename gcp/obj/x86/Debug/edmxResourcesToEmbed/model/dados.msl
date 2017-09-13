@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="modelStoreContainer" CdmEntityContainer="dadoscp">
+    <EntitySetMapping Name="Aluno">
+      <EntityTypeMapping TypeName="model.Aluno">
+        <MappingFragment StoreEntitySet="Aluno">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="ano_letivo" ColumnName="ano_letivo" />
+          <ScalarProperty Name="CFC" ColumnName="CFC" />
+          <ScalarProperty Name="BF" ColumnName="BF" />
+          <ScalarProperty Name="designacao" ColumnName="designacao" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="data_de_nascimento" ColumnName="data_de_nascimento" />
+          <ScalarProperty Name="nacionalidade" ColumnName="nacionalidade" />
+          <ScalarProperty Name="uf" ColumnName="uf" />
+          <ScalarProperty Name="religiao" ColumnName="religiao" />
+          <ScalarProperty Name="frequentou_EI" ColumnName="frequentou_EI" />
+          <ScalarProperty Name="pai" ColumnName="pai" />
+          <ScalarProperty Name="pai_RG" ColumnName="pai_RG" />
+          <ScalarProperty Name="pai_falecido" ColumnName="pai_falecido" />
+          <ScalarProperty Name="pai_instrucao" ColumnName="pai_instrucao" />
+          <ScalarProperty Name="pai_mora_com_aluno" ColumnName="pai_mora_com_aluno" />
+          <ScalarProperty Name="pai_profissao" ColumnName="pai_profissao" />
+          <ScalarProperty Name="mae" ColumnName="mae" />
+          <ScalarProperty Name="mae_NIS" ColumnName="mae_NIS" />
+          <ScalarProperty Name="mae_RG" ColumnName="mae_RG" />
+          <ScalarProperty Name="mae_falecida" ColumnName="mae_falecida" />
+          <ScalarProperty Name="mae_instrucao" ColumnName="mae_instrucao" />
+          <ScalarProperty Name="mae_mora_com_aluno" ColumnName="mae_mora_com_aluno" />
+          <ScalarProperty Name="mae_profissao" ColumnName="mae_profissao" />
+          <ScalarProperty Name="responsavel" ColumnName="responsavel" />
+          <ScalarProperty Name="responsavel_tipo" ColumnName="responsavel_tipo" />
+          <ScalarProperty Name="responsavel_endereco" ColumnName="responsavel_endereco" />
+          <ScalarProperty Name="responsavel_CEP" ColumnName="responsavel_CEP" />
+          <ScalarProperty Name="responsavel_telefone" ColumnName="responsavel_telefone" />
+          <ScalarProperty Name="contato_1" ColumnName="contato_1" />
+          <ScalarProperty Name="telefone_contato_1" ColumnName="telefone_contato_1" />
+          <ScalarProperty Name="contato_2" ColumnName="contato_2" />
+          <ScalarProperty Name="telefone_contato_2" ColumnName="telefone_contato_2" />
+          <ScalarProperty Name="problemas_de_saude" ColumnName="problemas_de_saude" />
+          <ScalarProperty Name="educacao_especial" ColumnName="educacao_especial" />
+          <ScalarProperty Name="atendimento_especial" ColumnName="atendimento_especial" />
+          <ScalarProperty Name="frequentou_outra_instituicao" ColumnName="frequentou_outra_instituicao" />
+          <ScalarProperty Name="meio_de_transporte" ColumnName="meio_de_transporte" />
+          <ScalarProperty Name="tempo_de_deslocamento" ColumnName="tempo_de_deslocamento" />
+          <ScalarProperty Name="data_de_preenchimento" ColumnName="data_de_preenchimento" />
+          <ScalarProperty Name="responsavel_pelo_preenchimento" ColumnName="responsavel_pelo_preenchimento" />
+          <ScalarProperty Name="turma_id" ColumnName="turma_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funcionario">
+      <EntityTypeMapping TypeName="model.Funcionario">
+        <MappingFragment StoreEntitySet="Funcionario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="data_ingresso" ColumnName="data_ingresso" />
+          <ScalarProperty Name="data_nascimento" ColumnName="data_nascimento" />
+          <ScalarProperty Name="RG" ColumnName="RG" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="carteira_de_trabalho" ColumnName="carteira_de_trabalho" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="instrucao" ColumnName="instrucao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Instrucao">
+      <EntityTypeMapping TypeName="model.Instrucao">
+        <MappingFragment StoreEntitySet="Instrucao">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Professor">
+      <EntityTypeMapping TypeName="model.Professor">
+        <MappingFragment StoreEntitySet="Professor">
+          <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+          <ScalarProperty Name="id_turma" ColumnName="id_turma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sexo">
+      <EntityTypeMapping TypeName="model.Sexo">
+        <MappingFragment StoreEntitySet="Sexo">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="abreviacao" ColumnName="abreviacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Turma">
+      <EntityTypeMapping TypeName="model.Turma">
+        <MappingFragment StoreEntitySet="Turma">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="professor_id" ColumnName="professor_id" />
+          <ScalarProperty Name="grupamento" ColumnName="grupamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Auxiliar" TypeName="model.Auxiliar" StoreEntitySet="Auxiliar">
+      <EndProperty Name="Funcionario">
+        <ScalarProperty Name="id" ColumnName="id_funcionario" />
+      </EndProperty>
+      <EndProperty Name="Turma">
+        <ScalarProperty Name="id" ColumnName="id_turma" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace gcp
+namespace gcp.view
 {
-    public partial class Form1 : Form
+    public partial class FormularioBase : Form
     {
-        public Form1()
+        public FormularioBase()
         {
             InitializeComponent();
+        }
+
+        private void FormularioBase_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
