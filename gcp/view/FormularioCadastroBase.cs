@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace gcp.view
 {
-    public partial class FormularioBase : Form
+    public partial class FormularioCadastroBase : Form
     {
-        public FormularioBase()
+        public FormularioCadastroBase()
         {
             InitializeComponent();
-        }
-
-        private void FormularioBase_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -16,7 +16,7 @@ namespace gcp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioBase());
+            Application.Run(new Principal());
         }
     }
 }

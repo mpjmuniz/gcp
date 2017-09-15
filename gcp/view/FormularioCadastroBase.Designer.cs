@@ -1,11 +1,11 @@
 ﻿namespace gcp.view
 {
-    partial class FormularioBase
+    partial class FormularioCadastroBase
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        protected System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -26,15 +26,12 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        protected void InitializeComponent()
+        private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.auxiliaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.funcionarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.turmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Text = "FormularioCadastroBase";
+
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.bImprimir = new System.Windows.Forms.Button();
             this.bCancelar = new System.Windows.Forms.Button();
@@ -43,63 +40,11 @@
             this.bAlterar = new System.Windows.Forms.Button();
             this.bCadastrar = new System.Windows.Forms.Button();
             this.bNovo = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // cadastrosToolStripMenuItem
-            // 
-            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alunoToolStripMenuItem,
-            this.funcionarioToolStripMenuItem,
-            this.auxiliaresToolStripMenuItem,
-            this.funcionarioToolStripMenuItem1,
-            this.turmaToolStripMenuItem});
-            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.cadastrosToolStripMenuItem.Text = "Cadastros";
-            // 
-            // alunoToolStripMenuItem
-            // 
-            this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.alunoToolStripMenuItem.Text = "Aluno";
-            // 
-            // funcionarioToolStripMenuItem
-            // 
-            this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.funcionarioToolStripMenuItem.Text = "Professor";
-            // 
-            // auxiliaresToolStripMenuItem
-            // 
-            this.auxiliaresToolStripMenuItem.Name = "auxiliaresToolStripMenuItem";
-            this.auxiliaresToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.auxiliaresToolStripMenuItem.Text = "Auxiliar";
-            // 
-            // funcionarioToolStripMenuItem1
-            // 
-            this.funcionarioToolStripMenuItem1.Name = "funcionarioToolStripMenuItem1";
-            this.funcionarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
-            this.funcionarioToolStripMenuItem1.Text = "Funcionario";
-            // 
-            // turmaToolStripMenuItem
-            // 
-            this.turmaToolStripMenuItem.Name = "turmaToolStripMenuItem";
-            this.turmaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.turmaToolStripMenuItem.Text = "Turma";
+
             // 
             // splitContainer1
             // 
@@ -182,37 +127,19 @@
             this.bNovo.TabIndex = 0;
             this.bNovo.Text = "Novo";
             this.bNovo.UseVisualStyleBackColor = true;
-            // 
-            // FormularioBase
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormularioBase";
-            this.Text = "Formulario";
-            this.Load += new System.EventHandler(this.FormularioBase_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
+
         }
 
         #endregion
-
-        protected System.Windows.Forms.MenuStrip menuStrip1;
-        protected System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
-        protected System.Windows.Forms.ToolStripMenuItem alunoToolStripMenuItem;
-        protected System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem;
-        protected System.Windows.Forms.ToolStripMenuItem auxiliaresToolStripMenuItem;
-        protected System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem1;
-        protected System.Windows.Forms.ToolStripMenuItem turmaToolStripMenuItem;
 
         protected System.Windows.Forms.SplitContainer splitContainer1;
         protected System.Windows.Forms.Button bNovo;
@@ -224,4 +151,3 @@
         protected System.Windows.Forms.Button bCadastrar;
     }
 }
-

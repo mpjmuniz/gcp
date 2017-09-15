@@ -9,11 +9,17 @@ using System.Windows.Forms;
 
 namespace gcp.view
 {
-    public partial class Entrada : FormularioBase
+    public partial class Base : Form
     {
-        public Entrada()
+        public Base()
         {
+            this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
+        }
+
+        private void funcionarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ChildForm
         }
     }
 }
