@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dadoscp" Class="modelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PTINBR-PC001744\DADOSCP;Initial Catalog=dadoscp;Integrated Security=True" SettingsObjectName="gcp.Properties.Settings" SettingsPropertyName="dadoscpConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Funcionario" Member="Funcionarios">
+    <Type Name="Funcionario">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="data_ingresso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="data_nascimento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RG" Type="System.String" DbType="NChar(9)" CanBeNull="true" />
+      <Column Name="CPF" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="titulo" Type="System.String" DbType="NChar(12)" CanBeNull="true" />
+      <Column Name="carteira_de_trabalho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="endereco" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="instrucao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Sexo_Funcionario" Member="Sexo1" ThisKey="sexo" OtherKey="abreviacao" Type="Sexo" IsForeignKey="true" />
+      <Association Name="Instrucao_Funcionario" Member="Instrucao1" ThisKey="instrucao" OtherKey="id" Type="Instrucao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sexo" Member="Sexos">
+    <Type Name="Sexo">
+      <Column Name="nome" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="abreviacao" Type="System.Char" DbType="NChar(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Sexo_Funcionario" Member="Funcionarios" ThisKey="abreviacao" OtherKey="sexo" Type="Funcionario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Instrucao" Member="Instrucaos">
+    <Type Name="Instrucao">
+      <Column Name="nome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Instrucao_Funcionario" Member="Funcionarios" ThisKey="id" OtherKey="instrucao" Type="Funcionario" />
+    </Type>
+  </Table>
+</Database>

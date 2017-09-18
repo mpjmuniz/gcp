@@ -25,12 +25,18 @@ namespace gcp.view
         }
 
         private Estado estadoAtual;
-        
+
+
+        private DialogoBusca dBusca;
+
         public FormularioFuncionario()
         {
             InitializeComponent();
 
             vazio();
+
+
+
         }
 
         private void InitializeComponent()
@@ -90,14 +96,14 @@ namespace gcp.view
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(784, 538);
+            this.splitContainer1.Size = new System.Drawing.Size(784, 562);
             this.splitContainer1.SplitterDistance = 259;
             // 
             // bNovo
             // 
             this.bNovo.Click += new System.EventHandler(this.bNovo_Click);
             // 
-            // bInscrever
+            // bImprimir
             // 
             this.bImprimir.Text = "Imprimir";
             this.bImprimir.Click += new System.EventHandler(this.bImprimir_Click);
@@ -121,6 +127,10 @@ namespace gcp.view
             // bCadastrar
             // 
             this.bCadastrar.Click += new System.EventHandler(this.bCadastrar_Click);
+            // 
+            // bBuscar
+            // 
+            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // label1
             // 
@@ -312,7 +322,7 @@ namespace gcp.view
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
+
         }
 
         private void bNovo_Click(object sender, EventArgs e)
@@ -437,6 +447,36 @@ namespace gcp.view
             // TODO: implementar impressão
         }
 
+        private void bBuscar_Click(object sender, EventArgs e)
+        {
+            dBusca = new DialogoBusca();
+            dBusca.MdiParent = this.MdiParent;
+            this.Enabled = false;
+
+            dBusca.FormClosing += new FormClosingEventHandler(tuplaSelecionada);
+            dBusca.Show();
+        }
+
+        private void tuplaSelecionada(object sender, EventArgs e)
+        {
+            //var query = from f in dadoscpDataSet.Funcionario where f.id == dBusca.getFuncionario() select f;
+
+            //var funcionario = query.First();
+
+            this.Enabled = true;
+
+           /* funcionario = null;
+
+            if (funcionario == null)
+            {
+                vazio();
+            }
+            else {
+                salvo();
+            }*/
+            
+        }
+
         private void camposHabilitados(bool habilitar){
             foreach (Control c in splitContainer1.Panel2.Controls)
             {
@@ -504,5 +544,7 @@ namespace gcp.view
 		    bCancelar.Enabled = true;
 		    bImprimir.Enabled = false;
 	    }
+
+        
     }
 }
