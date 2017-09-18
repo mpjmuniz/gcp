@@ -83,13 +83,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\FormularioCadastroBase.resx">
+      <DependentUpon>FormularioCadastroBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FormularioFuncionario.resx">
       <DependentUpon>FormularioFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.Config" />
+    <None Include="view\App.Config" />
     <EntityDeploy Include="model\dados.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>dados.Designer.cs</LastGenOutput>

@@ -20,5 +20,12 @@ namespace gcp.view
         {
 
         }
+
+        private void funcionarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormularioFuncionario fFuncionario = new FormularioFuncionario();
+            fFuncionario.MdiParent = this;
+            fFuncionario.Show();
+        }
     }
 }

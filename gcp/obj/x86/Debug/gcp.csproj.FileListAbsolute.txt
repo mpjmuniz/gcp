@@ -10,3 +10,14 @@ C:\Users\917001\Desktop\gcp\gcp\obj\x86\Debug\gcp.view.Entrada.resources
 C:\Users\917001\Desktop\gcp\gcp\obj\x86\Debug\gcp.view.FormularioBase.resources
 C:\Users\917001\Desktop\gcp\gcp\obj\x86\Debug\gcp.view.FormularioFuncionario.resources
 C:\Users\917001\Desktop\gcp\gcp\obj\x86\Debug\gcp.view.Principal.resources
+F:\Projetos\gcp\pspa-gcp\gcp\bin\Debug\gcp.exe.config
+F:\Projetos\gcp\pspa-gcp\gcp\obj\x86\Debug\gcp.exe
+F:\Projetos\gcp\pspa-gcp\gcp\obj\x86\Debug\gcp.csprojResolveAssemblyReference.cache
+F:\Projetos\gcp\pspa-gcp\gcp\obj\x86\Debug\gcp.Properties.Resources.resources
+F:\Projetos\gcp\pspa-gcp\gcp\obj\x86\Debug\gcp.view.Principal.resources
+F:\Projetos\gcp\pspa-gcp\gcp\obj\x86\Debug\gcp.view.FormularioFuncionario.resources
+F:\Projetos\gcp\pspa-gcp\gcp\obj\x86\Debug\gcp.csproj.GenerateResource.Cache
+F:\Projetos\gcp\pspa-gcp\gcp\bin\Debug\gcp.exe
+F:\Projetos\gcp\pspa-gcp\gcp\bin\Debug\gcp.pdb
+F:\Projetos\gcp\pspa-gcp\gcp\obj\x86\Debug\gcp.pdb
+F:\Projetos\gcp\pspa-gcp\gcp\obj\x86\Debug\gcp.view.FormularioCadastroBase.resources

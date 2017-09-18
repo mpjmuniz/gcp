@@ -9,11 +9,28 @@ using System.Windows.Forms;
 
 namespace gcp.view
 {
-    public partial class FormularioFuncionario : Principal
+
+    /*TODO: implementar botão "buscar"
+     *      implementar botão "imprimir"
+            */
+
+    public partial class FormularioFuncionario : FormularioCadastroBase
     {
+        private enum Estado
+        {
+            Vazio,
+            Novo,
+            Salvo,
+            Editavel
+        }
+
+        private Estado estadoAtual;
+        
         public FormularioFuncionario()
         {
             InitializeComponent();
+
+            vazio();
         }
 
         private void InitializeComponent()
@@ -296,7 +313,6 @@ namespace gcp.view
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private void bNovo_Click(object sender, EventArgs e)
@@ -348,6 +364,7 @@ namespace gcp.view
 
                 ajuda.set("Problema no cadastro: Alguns dos dados estão inválidos");
             } */
+            salvo();
         }
 
         private void bAlterar_Click(object sender, EventArgs e)
@@ -382,7 +399,9 @@ namespace gcp.view
 
              * */
 
-            salvo();
+            // Limpar campos digitados
+
+            vazio();
         }
 
         private void bEditar_Click(object sender, EventArgs e)
@@ -407,21 +426,47 @@ namespace gcp.view
                 lElementos.getItems().remove(lCampos.obterObjeto());
             } */
 
-            cancelado();
+            if (estadoAtual == Estado.Novo)
+                vazio();
+            else
+                salvo();
+
         }
 
         private void bImprimir_Click(object sender, EventArgs e){
             // TODO: implementar impressão
         }
 
-        private void novo()
-        {
+        private void camposHabilitados(bool habilitar){
             foreach (Control c in splitContainer1.Panel2.Controls)
             {
-                c.Enabled = true;
+                c.Enabled = habilitar;
             }
+        }
+
+        private void vazio() {
+            estadoAtual = Estado.Vazio;
+
+            camposHabilitados(false);
+
+            bNovo.Enabled = true;
+            bBuscar.Enabled = true;
+            bCadastrar.Enabled = false;
+            bEditar.Enabled = false;
+            bAlterar.Enabled = false;
+            bExcluir.Enabled = false;
+            bCancelar.Enabled = false;
+            bImprimir.Enabled = false;
+        }
+
+        private void novo()
+        {
+            estadoAtual = Estado.Novo;
+            
+            camposHabilitados(true);
 
             bNovo.Enabled = false;
+            bBuscar.Enabled = false;
             bCadastrar.Enabled = true;
             bEditar.Enabled = false;
             bAlterar.Enabled = false;
@@ -431,12 +476,12 @@ namespace gcp.view
         }
 
         private void salvo() {
-            foreach (Control c in splitContainer1.Panel2.Controls)
-            {
-                c.Enabled = false;
-            }
+            estadoAtual = Estado.Salvo;
+
+            camposHabilitados(false);
 
             bNovo.Enabled = true;
+            bBuscar.Enabled = true;
             bCadastrar.Enabled = false;
             bEditar.Enabled = true;
             bAlterar.Enabled = false;
@@ -446,38 +491,18 @@ namespace gcp.view
         }
 
         public void editavel() {
-            foreach (Control c in splitContainer1.Panel2.Controls)
-            {
-                c.Enabled = false;
-            }
+            estadoAtual = Estado.Editavel;
+
+            camposHabilitados(false);
 
 		    bNovo.Enabled = false;
             bCadastrar.Enabled = false;
+            bBuscar.Enabled = false;
 		    bEditar.Enabled = false;
 		    bAlterar.Enabled = true;
 		    bExcluir.Enabled = false;
 		    bCancelar.Enabled = true;
 		    bImprimir.Enabled = false;
 	    }
-
-        public void cancelado() {
-            foreach (Control c in splitContainer1.Panel2.Controls)
-            {
-                c.Enabled = false;
-            }
-		
-		    //TODO: pensar em como implementar: this.lCampos.limpar();
-		
-		    bNovo.Enabled = true;
-		    bCadastrar.Enabled = false;
-		    bEditar.Enabled = true;
-		    bAlterar.Enabled = false;
-		    bExcluir.Enabled = true;
-		    bCancelar.Enabled = false;
-		    bImprimir.Enabled = true;
-	    }
-
-
-        
     }
 }
